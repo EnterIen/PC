@@ -20,7 +20,6 @@ class HorizonTest implements ShouldQueue
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -31,7 +30,12 @@ class HorizonTest implements ShouldQueue
     public function handle()
     {
       foreach (range(1, 10) as $key => $value) {
-        \Log::info('i\'m -' . $value);
+        \Log::info($this->connection . 'i\'m -' . $value);
       }
+    }
+
+    public function tags()
+    {
+      return ['看一下 Monitor'];
     }
 }

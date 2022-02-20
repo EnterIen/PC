@@ -20,5 +20,9 @@ Artisan::command('inspire', function () {
 
 
 Artisan::command('horizon-test', function () {
-	\App\Jobs\HorizonTest::dispatch();
+	foreach (range(1, 10) as $key => $value) {
+		\App\Jobs\HorizonTest::dispatch();
+
+		sleep(1);
+	}
 });
